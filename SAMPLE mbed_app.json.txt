@@ -1,0 +1,23 @@
+// This is how this projects mbed_app.json should look like.
+// Remember to put in the correct SSID and password.
+
+{
+    "target_overrides": {
+      "*": {
+        "platform.stdio-buffered-serial": 1,
+        "platform.stdio-baud-rate": 115200,
+        "nsapi.default-wifi-security": "WPA_WPA2",
+        "nsapi.default-wifi-ssid": "\"SSID-HERE\"",
+        "nsapi.default-wifi-password": "\"PASSWORD-HERE\"",
+        "platform.minimal-printf-enable-floating-point": true,
+        "target.printf_lib": "std",
+        "platform.stdio-minimal-console-only": false,
+        "rtos.main-thread-stack-size": 8192
+      },
+      "DISCO_L475VG_IOT01A": {
+          "target.components_add": ["ism43362"],
+          "ism43362.provide-default": true,
+          "target.network-default-interface-type": "WIFI"
+        }
+    }
+}
